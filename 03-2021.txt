@@ -1,0 +1,209 @@
+- Có bắn delay được không?
+- Nếu không bắn thì sao?
+
+---
+- Generate ID kiểu gì? -> unixtime millisecond
+- Bắn batch hay bắn single? Cơ chế? -> bắn riêng lẻ
+- Bắn xong có đánh dấu lại vào action không? (để query lại trong trường hợp bắn fail) -> tạm thời không cần đánh dấu lại. Sau này sẽ lưu vào redis trước, sau 10s mới lưu vào es
+
+--
+- event name đang khác nhau về format -> để field khác/ transform.
+- Nếu không có token -> vẫn bắn data như cũ 
+
+-----
+- event name đang copy, lấy cột event name bên fb
+
+
+===
+Params dạng string list đang gửi lên thế nào?
+
+
+--
+checkout nhiều variant.
+
+===
+pixel 2 token: EAAYFTRc8UaMBAN5rmjEZB7JPcT3Wm5RCRXznym8lvZC3XRSzNZAM9IwG68psk3Jsxq5ClSbKEichrPni1dRDil3H9tiYzxRoNdeslyZCD2lBe2VZC0A4KLSWepy0aMJZBNmX7ZAcUW57wQkDAdQsoDmjlBiw4bVNgAomtr6ZCoKH2uyeHAvv04DtEOkRr9araSAZD
+
+
+curl -X POST \
+  --form-string 'data='\
+  -F 'access_token=<ACCESS_TOKEN>' \
+
+
+  =
+
+
+pixel_id/token
+
+pixel_id/token-testcode-CODE
+  
+===
++ 
+
+Go, Java, Python, Javascript, Lua, PHP, C#, C++, C, Bash
+---
+- update them line printbase 
+- cac case dac biet (chi dien 1 so truong thi nhu nao)
+- update trang contact us, them 1 selection nua chon loai support; them validate.
+===
+Config 
+
+===
+Composition API
+- 
+
+https://gitlab.shopbase.dev/brodev/sbgo/-/merge_requests/new?utf8=✓&merge_request[source_project_id]=5&merge_request[source_branch]=%s&merge_request[target_project_id]=5&merge_request[target_branch]=dev
+
+---
+- redirect đang hoạt động thế nào ?
+- Viết api lấy cache ra xem thế nào?
+- Con nào đang set key này vào redis:  7) "0:dms:shop-domain:3014"
+
+
+==
+openresty path: /usr/local/openresty/nginx
+
+access_log  logs/access.log  main; => main format
+
+- init -> init shared dict in conf.d folder
+{"method":"POST","params":{"shop_id":10055574,"public_domain":"simple.sbasedev.tk","id":462},"path":"\/api\/v1\/shop-domain"}
+
+{\"sucess\":true}
+
+===
+co che current = symlinks
+
+== Cach tim file log
+Trong mỗi file conf thường sẽ định nghĩa file log nằm ở đâu.
+
+==
+69 => Q30 (target: 1000000040327245; recommend: 1000000040493998) => lowest
+70 => Q31 (target: 1000000040327246; recommend: 1000000040493998) => highest
+--
+cart:
+5484991 => 1000000040327245 => 69 (lowest)
+5484992 => 1000000040327246
+
+
+==
+cartItem => product
+product => offer_ids
+
+=> trung product, offer khac nhau.
+
+==
+1. Production và dev khác gì nhau?
+=> thay đổi cơ chế build phù hợp với prod (restart graceful, dùng pm2) hay dev (hot reload, cache code trên ram)
+2. File client entry = mục lục; file bundle chứa source code
+
+==
+Phần build (config)
+- CÓ 1 config base chung, từng môi trường 1 khác nhau -> overwrite
+- Lệnh thường dùng: build, dev, serve theme
+- Lưu ý: Khi build sẽ có target; nếu server phải config là "node".
+
+
+===
+Phần run: 
+* Store front cũ: sơ đồ trong hình
+- Chia server và client: 
++ server: gọi từ openresty -> node -> trả về string HTML. Browser dựa vào nội dung load ra file js liên quan
++ client: gọi từ openresty -> server file html
+
+- Append child:
++ Nguyên nhân: do node và browser render ra các element khác nhau (thường do browser tự gen ra 1 DOM gì đó)
+VD:
++ thẻ table, browser tự fill <tr/> <td/>
++ Dùng {{ }} để bind hay bị => nên dùng v-html
+
+* Storefront mới: sơ đồ trong hình
+- Vấn đề take time khi làm SF mới:
++ Vue 3 => nhiều cái mới, không có tham chiếu.
++ Docs không đủ + khó đọc => config sai
++ Làm typescript có nhiều cái không biết.
+VD: express trong request chỉ có 1 số prop, bên mình muốn set thêm vào => cần tìm cách extend thêm vào
++ Composition API không tính kĩ (vẫn dùng, khi không dùng là khi nào)
+	+ Composition cần render ra component sẽ chạy hết 1 lifecycle, nhưng mình không muốn thế, mà chỉ chạy hàm async data thôi.
+	+ Không có global state => dùng vuex
+	+ mutation làm g
+	+ ...
+---
+
+Tìm hiểu thêm:
++ Đọc code mới
++ Thống nhất về cách code.
+
+
+===
+Node thêm
+- Vấn đề: build style bị lỗi.
+- Tự setup 1 repo: dùng của hacker news
+
+
+---
+- Mục đích custom riêng ssr mà khôngdùng nuxt: 
++ Thay đổi cơ chế bundle file (bình thường bundle ra file, node đọc file json => eval. Bên mình sửa lại thành file cho node import vào luôn => tăng performance)
+
+
+---
+Vấn đề sf cũ:
+- structure chưa tốt.
+- các function lộn xộn => cần thống nhất.
+- page speed:
++ có nhiều code không cần dùng đang để trong core (product images, ) => move sang theme.
++ build version cho trình duyệt cũ và trình duyệt mới.
+----
+Phân biệt vuestorefront và storefront
+- VueSF: Là bản enterprise, chỉ dùng cho 1 doanh nghiệp.
+- SF: Dùng multiple store.
+---
+Tracking: đang chưa tập trung, code vào tất cả các module. Expect đang muốn move lại gọn vào 1 chỗ. (chưa đủ thời gian, bàn sau trong 4.1)
+--
+- Global variables (constants) -> guide cho webpack build chỉ cho dev, prod, csr, ssr => giảm bundle size cho từng case.
+- Thường thư viện sẽ có luôn đoạn code devmode đi kèm (VD: vue,...)
+- Khi nào dùng interface, khi nào ùng type (typescritpt) ?
+---
+
+
+- pixel staging: EAAYFTRc8UaMBAPXr3ZA4lwq4jIz7vHxDvhq3ILHKq2EuUs3ZBVeHK7Q5jzquJAq7JnSCmddI5btLCWpfvZAy4baX9gZB6j8rkYeztdcrPZAWCZBvDZAYCTif7Vp8EgvDcZCocLy9ZCRjLzMswPzfhISR1QsKD7iMjHeMZAIocPpilQfC3b1vH9vHCntZBKEiSZCgPfUZD
+
+---
+- Issue upload ảnh bị chậm 
+-> cache lại url s3 thông qua proxy 
+--> prob: Resize image ko hoạt động.
+- House keeping = tối ưu
+--
+
+https://text.relipasoft.com/2019/06/phep-toan-thao-tac-bit-bitwise-operation-va-ung-dung-trong-lap-trinh-thiet-ke-he-thong/#Label2-link
+https://www.stdio.vn/modern-cpp/cac-thao-tac-tren-bit-1QnH8
+
+2 roller: object►pages►fixed►footer►settings►blocks►0►
+3 inside: object►pages►fixed►footer►settings►blocks►0►
+
+-- test update 
+
+====
+
+
+===
+- bottom up = chất lượng
+- top down = đo đạc chỉ số
+
+
+===
+- Setup high quality team: 
++ training doc, workspace (trello, room,...)
++ flow, collab flow
+
+- Setup workflow: người setup đưa ra flow rõ ràng, dưới dạng flow chart để member đọc dễ hiểu
+
+- COntribuition
++ Viết theo định dạng word tiêu chuẩn
++ Hạn chế màu mè, styling khi không thật sự cần thiết
++ Dùng tool draw.io vẽ chart, ko dùng hình
+
+- Mindset:
++ Chơi ở thế chủ động
++ zoom out, zoom in vào vấn đề
+
+- 
