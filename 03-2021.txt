@@ -180,7 +180,7 @@ https://www.stdio.vn/modern-cpp/cac-thao-tac-tren-bit-1QnH8
 2 roller: object►pages►fixed►footer►settings►blocks►0►
 3 inside: object►pages►fixed►footer►settings►blocks►0►
 
-
+newchange01
 ====
 
 
