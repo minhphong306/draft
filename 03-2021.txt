@@ -177,8 +177,8 @@ Tracking: đang chưa tập trung, code vào tất cả các module. Expect đan
 https://text.relipasoft.com/2019/06/phep-toan-thao-tac-bit-bitwise-operation-va-ung-dung-trong-lap-trinh-thiet-ke-he-thong/#Label2-link
 https://www.stdio.vn/modern-cpp/cac-thao-tac-tren-bit-1QnH8
 
-2 roller: object►pages►fixed►footer►settings►blocks►0►
-3 inside: object►pages►fixed►footer►settings►blocks►0►
+roller: object►pages►fixed►footer►settings►blocks►0►
+inside: object►pages►fixed►footer►settings►blocks►0►
 
 newchange03
 ====
@@ -205,4 +205,9 @@ newchange03
 + Chơi ở thế chủ động
 + zoom out, zoom in vào vấn đề
 
-- 
+===
+pixel: 130841238938115
+token: EAAYFTRc8UaMBABwL7qbuWgOX3oBITAD5SEe7UwUVFJk8l4UQXsOyNAuQEtedSu8Ut75i46b4i6KRvLkAife5gZAezDILk2lItxt62rkgSTUV7EdUveUdjE01R7hrEN0V8BI0RhwteF046Y6jC0uDeoeFtTmG906SZAVZBPgPteCFCrCZCglvTxlRgyZCZBAS4ZD
+
+pixel: 176919213968802
+token: EAAYFTRc8UaMBAIfPp70MDfDHyDg8EZAlhfJxOCDLxPyLSGOImfyNzzyeU8vEY7gLylSC8ZBBhsx0V0xHK4DlRXaUdqtFsprT3tTq101pZAn7sjQ51X2Oc4lYybXkEXBbSGOmuTqR3nDPMCf0ZCW8FeiZBP5c7OfvVE7wu7IZCbgvXdjJAh7fab6Y5QsZBnLUHUZD
