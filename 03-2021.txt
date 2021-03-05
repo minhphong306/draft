@@ -211,3 +211,16 @@ token: EAAYFTRc8UaMBABwL7qbuWgOX3oBITAD5SEe7UwUVFJk8l4UQXsOyNAuQEtedSu8Ut75i46b4
 
 pixel: 176919213968802
 token: EAAYFTRc8UaMBAIfPp70MDfDHyDg8EZAlhfJxOCDLxPyLSGOImfyNzzyeU8vEY7gLylSC8ZBBhsx0V0xHK4DlRXaUdqtFsprT3tTq101pZAn7sjQ51X2Oc4lYybXkEXBbSGOmuTqR3nDPMCf0ZCW8FeiZBP5c7OfvVE7wu7IZCbgvXdjJAh7fab6Y5QsZBnLUHUZD
+
+---
+Cần phân tích: 
++ Chia khoảng thời gian thế nào là hợp lí (vd: dựa vào order count)
++ Tạo data lớn như trên production để test real hơn
+
+==
+01/03: 1614531600 - /3600 - 448481
+10/03: 1615309200 - /3600 - 448697
+
+total = end - start
+
+= (1615395600 - 1614531600)/60/60/24
