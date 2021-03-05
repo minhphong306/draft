@@ -1,0 +1,8 @@
+Trick
+==
+Hack pass wifi
+có 4 cách, sinh viên năm cuối cũng có thể code trên con esp8266/esp32:
+1. Nó kết nối liên tục sau đó thử các password dễ, rồi lại đổi mac, thử pass...
+2. Nó tạo 1 access point ảo, rồi gửi airmon deauth để disconnect client với assetpoint thật, sau đó dụ client kết nối vào rồi lấy pass
+3. Nó kết hợp airmonng và airmon deauth để lấy gói hanshake, sau đó brute force password
+4. Nó lấy BSSID rồi dò trong mấy trang từ điển kiểu app "wifi chùa" 
