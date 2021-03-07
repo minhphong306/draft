@@ -221,6 +221,14 @@ Cần phân tích:
 01/03: 1614531600 - /3600 - 448481
 10/03: 1615309200 - /3600 - 448697
 
+==
+05/02: 1612483200
+05/03: 1614902400
+
 total = end - start
 
 = (1615395600 - 1614531600)/60/60/24
+
+===
+Channel hay ve thuat toan (cach nhanh chong improve coding interview skill)
+https://www.youtube.com/channel/UCnxhETjJtTPs37hOZ7vQ88g
