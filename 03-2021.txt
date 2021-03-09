@@ -242,6 +242,15 @@ INSERT INTO `sb_product` (`shop_id`, `id`, `handle`, `title`, `tags`, `body_html
 ===
 
 sbase-product-statistic-consumer-58b6659897-dplrl
+recsys-order-scheduler-5b8b9c9c57-bt92l
 
 https://gapi.dev.shopbase.net/v1/recsys/recommendation/v2/10053149/best-seller?page=home&limit=12&contact_ref_id=1614225838566_7367&v=1615272446485
 https://hinhin.myshopbase.net/admin/statistics/v2/top-products.json?from_time=2021-02-07&to_time=2021-03-08&shop_ids=10053149&top_product=by_unit_sold&access_token=783aa6a1c2c72c03d12005fe6a3afb42c57c44ca70f2f2768607242c6bc99413
+
+
+{"level":"debug","ts":"2021-03-09T11:06:01.167Z","caller":"dbmanager/statistic_manager.go:297","msg":"DEBUG QUERY","query":"","args":[,10053149,"HOUR",1612630800,1615222799,"PRODUCT","total"]}
+
+
+SELECT ref_id, SUM(total_sales) as total_sales, SUM(order_value) as order_value, SUM(order_items_count) as order_items_count, SUM(order_count) as order_count, SUM(total_item_sold) as total_item_sold, SUM(gross_sales) as gross_sales, SUM(discount) as discount, SUM(refunded) as refunded, SUM(net_sales) as net_sales, SUM(shipping) as shipping, SUM(tax) as tax, SUM(view_count) as view_count, SUM(profit) as profit,MAX(title) AS title, MAX(image_url) AS image_url, MAX(shop_id) AS shop_id, MAX(time) AS time, MAX(staff_user_id) AS staff_user_id, MAX(product_title) AS product_title FROM sb_sales_statistics 
+
+WHERE staff_user_id = 0 AND shop_id IN (10053149) AND time_type = "HOUR" AND time >= 1612630800 AND time <= 1615222799 AND ref_type = "PRODUCT" AND source = "total" GROUP BY ref_id ORDER BY total_item_sold DESC LIMIT 100
