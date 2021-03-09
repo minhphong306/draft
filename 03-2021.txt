@@ -232,3 +232,16 @@ total = end - start
 ===
 Channel hay ve thuat toan (cach nhanh chong improve coding interview skill)
 https://www.youtube.com/channel/UCnxhETjJtTPs37hOZ7vQ88g
+
+
+https://gapi-log.shopbase.com/app/kibana#/discover?_g=()&_a=(columns:!(message),filters:!(('$state':(store:appState),meta:(alias:!n,disabled:!f,index:c0d4f0e0-74dc-11eb-8f39-0753118cc71e,key:k8s.name,negate:!f,params:(query:recsys-dms,type:phrase),type:phrase,value:recsys-dms),query:(match:(k8s.name:(query:recsys-dms,type:phrase)))),('$state':(store:appState),meta:(alias:!n,disabled:!f,index:c0d4f0e0-74dc-11eb-8f39-0753118cc71e,key:level,negate:!f,params:(query:error,type:phrase),type:phrase,value:error),query:(match:(level:(query:error,type:phrase))))),index:c0d4f0e0-74dc-11eb-8f39-0753118cc71e,interval:auto,query:(language:lucene,query:''),sort:!('@timestamp',desc))
+
+INSERT INTO `sb_product` (`shop_id`, `id`, `handle`, `title`, `tags`, `body_html`, `product_type`, `default_image_id`, `published_at`, `published_scope`, `template_suffix`, `metafields_global_title_tag`, `metafields_global_description_tag`, `vendor`, `created_at`, `updated_at`, `published`, `updated_source`, `seo_id`, `display_options`, `product_source`, `product_availability`, `custom_options`, `can_preview`) VALUES
+('10105347', '1000000122911691', 'turtle-tb-2', 'Save the turtle Tumbler', 'turtle', '<br><b>Tumbler 20oz</b><br><ul>\r\n<li>BPA-free, dishwasher safe</li>\r\n<li>Double-Wall Vacuum Insulation to keep hot drinks hot and cold drinks cold</li>\r\n<li>Holds up to 20 oz of liquid</li>\r\n<li>Top Diameter x Bottom Diameter x Height: 3.5\" x 2.7\" x 6.8\"</li>\r\n<li>Premium grade copper lined 18/8 stainless steel</li>\r\n</ul><br><b>Tumbler 30oz</b><br><ul>\r\n<li>BPA-free, dishwasher safe</li>\r\n<li>Double-Wall Vacuum Insulation to keep hot drinks hot and cold drinks cold</li>\r\n<li>Holds up to 30 oz of liquid</li>\r\n<li>Top Diameter x Bottom Diameter x Height: 4\" x 2.7\" x 7.8\"</li>\r\n<li>Premium grade copper lined 18/8 stainless steel</li>\r\n<li>Perfect for travelers, drivers, teachers, Mother\'s and Father\'s Day gifts, Christmas gifts, BBQ experts, party cups, sailors & more</li>\r\n<li><strong>Can bring anywhere:</strong> indoors, outdoors, sports, traveling, camping, driving & office</li>\r\n</ul>', '', '689137871', '2020-12-09 09:24:04', NULL, NULL, NULL, NULL, 'ShopBase', '2020-12-09 09:24:04', '2020-12-09 09:26:23', '1', 'print_base_create_product', NULL, '{\"group_options_by\":328037828}', 'print_base', '2', NULL, NULL);
+
+===
+
+sbase-product-statistic-consumer-58b6659897-dplrl
+
+https://gapi.dev.shopbase.net/v1/recsys/recommendation/v2/10053149/best-seller?page=home&limit=12&contact_ref_id=1614225838566_7367&v=1615272446485
+https://hinhin.myshopbase.net/admin/statistics/v2/top-products.json?from_time=2021-02-07&to_time=2021-03-08&shop_ids=10053149&top_product=by_unit_sold&access_token=783aa6a1c2c72c03d12005fe6a3afb42c57c44ca70f2f2768607242c6bc99413
