@@ -254,3 +254,45 @@ https://hinhin.myshopbase.net/admin/statistics/v2/top-products.json?from_time=20
 SELECT ref_id, SUM(total_sales) as total_sales, SUM(order_value) as order_value, SUM(order_items_count) as order_items_count, SUM(order_count) as order_count, SUM(total_item_sold) as total_item_sold, SUM(gross_sales) as gross_sales, SUM(discount) as discount, SUM(refunded) as refunded, SUM(net_sales) as net_sales, SUM(shipping) as shipping, SUM(tax) as tax, SUM(view_count) as view_count, SUM(profit) as profit,MAX(title) AS title, MAX(image_url) AS image_url, MAX(shop_id) AS shop_id, MAX(time) AS time, MAX(staff_user_id) AS staff_user_id, MAX(product_title) AS product_title FROM sb_sales_statistics 
 
 WHERE staff_user_id = 0 AND shop_id IN (10053149) AND time_type = "HOUR" AND time >= 1612630800 AND time <= 1615222799 AND ref_type = "PRODUCT" AND source = "total" GROUP BY ref_id ORDER BY total_item_sold DESC LIMIT 100
+
+---
+
+{"level":"debug","ts":"2021-03-09T11:11:25.208Z","caller":"dbmanager/statistic_manager.go:236","msg":"DEBUG QUERY","query":"","args":[,,"",1615161600,1615161600,"PRODUCT","total",0]}
+
+SELECT ref_id, SUM(total_item_sold) as total_item_sold FROM sb_sales_statistics WHERE staff_user_id = 0 AND shop_id = 10053149 AND time_type = "HOUR" AND time >= $4 AND time <= $5 AND ref_type = $6 AND source = $7 AND total_item_sold > $8 GROUP BY ref_id ORDER BY total_item_sold DESC LIMIT 30;
+
+
+{"level":"debug","ts":"2021-03-09T11:11:25.208Z","caller":"dbmanager/statistic_manager.go:236","msg":"DEBUG QUERY","query":"SELECT ref_id, SUM(total_item_sold) as total_item_sold FROM sb_sales_statistics WHERE staff_user_id = $1 AND shop_id = $2 AND time_type = $3 AND time >= $4 AND time <= $5 AND ref_type = $6 AND source = $7 AND total_item_sold > $8 GROUP BY ref_id ORDER BY total_item_sold DESC LIMIT 30","args":[0,10053149,"HOUR",1615161600,1615161600,"PRODUCT","total",0]}
+{"level":"debug","ts":"2021-03-09T11:11:25.214Z","caller":"grpcinterceptor/bkctx_interceptor.go:58","msg":"Tracing info of request /exmsg.sbase.services.Statistic/GetSaleStatisticsTopSold","source_pod_name":"sbase-product-statistic-consumer-58b6659897-xw5v5","source_ip":"192.168.108.226","process_time":0.006205099,"request_size":3676,"response_size":0}
+{"level":"debug","ts":"2021-03-09T11:11:25.216Z","caller":"dbmanager/statistic_manager.go:236","msg":"DEBUG QUERY","query":"SELECT ref_id, SUM(total_item_sold) as total_item_sold FROM sb_sales_statistics WHERE staff_user_id = $1 AND shop_id = $2 AND time_type = $3 AND time >= $4 AND time <= $5 AND ref_type = $6 AND source = $7 AND total_item_sold > $8 GROUP BY ref_id ORDER BY total_item_sold DESC LIMIT 30","args":[0,10053149,"HOUR",1612656000,1612656000,"PRODUCT","total",0]}
+
+
+
+
+Stat[1612656000, 1613001600]	
+Stat[1614038401, 1614384000]
+Stat[1614729601, 1615075200]
+
+---
+Curl update mapping
+
+curl --location --request PUT 'localhost:9200/shop_v5/_mapping/product' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "product": {
+    "properties": {
+      "viewed": {
+        "type": "long"
+      },
+      "sold": {
+        "type": "long"
+      },
+      "view_updated_at": {
+        "type": "long"
+      },
+      "sold_updated_at": {
+        "type": "long"
+      }
+    }
+  }
+}'
