@@ -319,3 +319,11 @@ curl --location --request PUT 'localhost:9200/shop_v5/_mapping/product' \
 + CHia ra mục advance, normal (advance vd cho team scaleops hiểu được cách build,...)
 
 ===
+Chu de talk
+- git (cho QA de hieu)
+- postman (dung sao hieu qua)
+- redis (dung sorted set, set, hmap,...), dung sao cho dung
+
+===
+Lock process khi sync product
+/home/adminpc/go/src/sbgo/cmd/sbase/consumers/sf-sync-es-auto-v3/handlers/auto_sync_es_v3_handler.go
