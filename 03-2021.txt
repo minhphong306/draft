@@ -326,4 +326,4 @@ Chu de talk
 
 ===
 Lock process khi sync product
-/home/adminpc/go/src/sbgo/cmd/sbase/consumers/sf-sync-es-auto-v3/handlers/auto_sync_es_v3_handler.go
+getProcess()
