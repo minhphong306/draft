@@ -296,3 +296,26 @@ curl --location --request PUT 'localhost:9200/shop_v5/_mapping/product' \
     }
   }
 }'
+
+
+
+===
+- Step Chạy example lên ngay lập tức (config ENV thế nào,...)
+- Cơ chế hoạt dộng, structure (core có gì, theme, có gì,...)
+- Chi tiết hơn:
++ Routing thế nào 
++ composition thé nào
+++ Đưa ra guide để viết code. Dùng thế nào, viết ở đaua, ...
+
+- Theme: 
++ Chưa cần tìm hiểu nhiều thì không cần biết nhiều
+
+-- Nên co sự liên kết. Đọc phần này hướng đến phần kia.
+- Tham khảo vitejs.dev
+
+- Hướng làm:
++ Show cho xem đa
++ FAQ, common problem
++ CHia ra mục advance, normal (advance vd cho team scaleops hiểu được cách build,...)
+
+===
